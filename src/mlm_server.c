@@ -714,7 +714,7 @@ client_expired (client_t *self)
 static void
 client_closed_connection (client_t *self)
 {
-    if (*self->address)
+    if (self->address)
         zsys_info ("client %u address='%s' - closed connection", self->unique_id, self->address);
 }
 
