@@ -19,8 +19,9 @@ RUN make install
 RUN ldconfig
 
 WORKDIR /tmp
-RUN git clone --quiet https://github.com/zeromq/malamute malamute
+RUN git clone --quiet https://github.com/flared/malamute malamute
 WORKDIR /tmp/malamute
+RUN git checkout flare-master
 RUN ./autogen.sh 2> /dev/null
 RUN ./configure --quiet --without-docs
 RUN make
